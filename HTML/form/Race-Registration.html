@@ -4,43 +4,55 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <!-- 반드시 타이틀 달아주기 -->
+    <title>Registration Form</title>
   </head>
   <body>
     <h1>Race Registration!</h1>
-    <form>
+    <form action="">
       <div>
-        <label id="firstName">First Name</label>
-        <input id="firstName" />
-        <label id="lastName">First Name</label>
-        <input id="lastName" />
+        <label for="firstName">First Name</label>
+        <!-- label에는 for -->
+        <input type="text" id="firstName" name="firstName" required />
+        <!-- input에는 type, id, name 필수 -->
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" required />
       </div>
 
       <div>
-        <p>
-            <label id="radio">Select a Race:</label>
-        </p>
-        <p>
-            <input type="radio" name="radio">Fun Run 5k</input><br/>
-            <input type="radio" name="radio">Half Marathon</input><br/>
-            <input type="radio" name="radio">Full Marathon</input><br/>
-        </p>
+        <p>Select a Race:</p>
+
+        <!-- radio는 name을 같게 해서 같은 종류임을 알리고, id는 각각 다르게 해준다 -->
+        <!-- value가 실제 전송되는 각각의 값! 꼭 지정해야함 -->
+        <div>
+          <input type="radio" id="funrun" name="race" required />
+          <label for="funrun">Fun Run 5k</label>
+        </div>
+        <div>
+          <input type="radio" id="half" name="race" required />
+          <label for="half">Half Marathon</label>
+        </div>
+        <div>
+          <input type="radio" id="full" name="race" required />
+          <label for="full">Full Marathon</label>
+        </div>
+      </div>
+
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" />
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
       </div>
       <div>
-        <label id="email">Email</label>
-        <input id="email" type="email"/>
-        <label id="password" type="password">Password</label>
-        <input id="password" type="password"/>
-      </div>
-      <div>
-        <label id="ageGroup">Select Age Group</label>
+        <label for="ageGroup">Select Age Group</label>
         <select id="ageGroup">
-            <option>under 18</option>
-            <option>18-30</option>
-            <option>30-40</option>
-            <option>40-50</option>
-            <option>50-60</option>
-            <option>over 60</option>
+          <option value="under_18">under 18</option>
+          <option value="18_30">18-30</option>
+          <option value="30_40">30-40</option>
+          <option value="40_50">40-50</option>
+          <option value="50_60">50-60</option>
+          <option value="60_over">over 60</option>
         </select>
       </div>
       <div>
